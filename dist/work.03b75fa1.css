@@ -1,0 +1,371 @@
+:root{
+    --color-0:#000;
+    --color-1:#B7094C;
+    --color-2:#D4A373;
+    --color-3:#E9ECEF;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection{
+    color: var(--color-0);
+    background: var(--color-2);
+}
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-points-y: repeat(100%);
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: var(--color-0);
+    scroll-behavior: smooth;
+    cursor: none;
+}
+body::-webkit-scrollbar{
+    width:0px;
+}
+#cursor{
+    position: absolute;
+    height: 3vh;
+    width: 3vh;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--color-2);
+    z-index: 100000000000000000000;
+    background: #d4a37344;
+}
+body>div:not(.pg3,.wrapper,#cursor,.nav){
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: var(--color-3);
+    align-items: center;
+    justify-content: center;
+    color: var(--color-2);
+}
+button{
+    border: 1px solid var(--color-2);
+    background: transparent;
+    color: var(--color-2);
+    font-weight: 100;
+    width: 17vh;
+    height: 4vh;
+    transition: .3s;
+}
+button:active{
+    filter: brightness(50%);
+}
+button:hover{
+    background: var(--color-2);
+    color: var(--color-0);
+}
+.nav{
+    position: sticky;
+    top: 10%;
+    left:90%;
+    width: fit-content;
+}
+.wrapper{
+    background: transparent;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+.i{
+    left: 00%;
+    height: 230vh;
+    width: 8%;
+}
+.ii{
+    height: 120vh;
+    width: 15%;
+    left: 85%;
+}
+.ii a{
+    position: sticky;
+    top: 3%;
+    height: fit-content;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 4vh;
+    transition-duration: .3s;
+}
+a{
+    color: var(--color-3);
+    z-index: 100000000000000;
+}
+a:hover{
+    text-decoration: none;
+    cursor: none;
+    color: var(--color-0);
+}
+
+.lines{
+    position: sticky;
+    top: 50%;
+    transform: translate(0%,-50%);
+    height:fit-content;
+    width: 100%;
+    display: grid;
+    gap: 3vh;
+}
+.lines hr{
+    position: relative;
+    left: 10%;
+    height: 2px;
+    transition-duration: .3s;
+}
+/* .lines hr:hover{
+    width: 60%;
+}
+/* hr:nth-child(2){
+}
+hr:nth-child(3){
+} */
+.up{
+    width: 80%;
+}
+.down{
+    width: 40%;
+}
+.black{
+    background-color: var(--color-0);
+    color: var(--color-0);
+}
+.white{
+    background-color: var(--color-3);
+    color: var(--color-3);
+}
+.ii a{
+    background: transparent;
+}
+.pg1 h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: var(--color-3);
+    font-family: 'El Messiri', sans-serif;
+    font-size: 10vh;
+    z-index: 4;
+}
+.bg{
+    width: 100%;
+    height: 100%;
+    align-self: flex-start;
+    text-align: center;
+}
+.bg img{
+    height: 80%;
+    width: 50%;
+    padding: 0 1vh 1vh 1vh;
+    border: 1px double var(--color-2);
+    border-top: 0px;
+    position: sticky;
+    top: 0%;
+}
+#myContent{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    color: var(--color-0);
+}
+#myContent div{
+    height: contain;
+    transition: 1.4s;
+}
+.inf{
+    justify-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Red Rose', cursive;
+    height: 70%;
+    gap: 30%;
+    padding: 0 0 0 10%;
+    transform: translateX(-30%);
+    opacity: 0%;
+    max-width: 60%;
+}
+[data-inviewport="inf"].is-inViewport{
+    transform: translateX(0%);
+    opacity: 100%;
+}
+.inf #ttl{
+    font-size: 3vh;
+    letter-spacing: 1vh;
+    width: fit-content;
+}
+.inf #txt{
+    letter-spacing: .3vh;
+    font-size: 1.6vh;
+    max-width: 60%;
+    height: 100%;
+}
+[data-inviewport="pic"]{
+    justify-self: end;
+    height:50%;
+    width: 40%;
+    border: 2px solid var(--color-2);
+    z-index: 100000000000;
+    transform: translateX(-70%);
+    opacity: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/bigwave_japan-new1.fb0b1387.png);
+    background-size: cover;
+}
+[data-inviewport="pic"].is-inViewport{
+    transform: translateX(0%);
+    opacity: 100%;
+}
+#pic .imgHW{
+    width: 90%;
+    height: 90%;
+    transition-duration: .3s;
+    pointer-events: all;
+    overflow: hidden;
+}
+.imgHW:hover{
+    transform: scale(1.5) translateX(-20%);
+}
+/* .imgsF{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: -100%;
+} */
+@keyframes mgO {
+    0%{
+        top: 00%;
+    }
+    50%{
+        top: -50%;
+    }
+    100%{
+        top: -100%;
+    }
+}
+.imgHW img{
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    top: 0%;
+    background: transparent;
+    /* animation: mgO 10s ease-in-out infinite alternate; */
+}
+.hr{
+    position: absolute;
+    top: 190%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+.hr hr:nth-child(1){
+    width: 15vw;
+    height: 1px;
+    background: rgba(0, 0,0,.3);
+    z-index: 1;
+}
+.hr hr:nth-child(2){
+    width: 15vw;
+    height: 3px;
+    position:absolute;
+    top: 0%;
+    left: 00%;
+    border-radius: 5rem;
+    background: var(--color-2);
+    z-index: 2;
+    transform: translate(0%,-25%);
+    transition-duration:.5s ;
+}
+.hr hr:nth-child(2):after{
+    content: '';
+    height: 1.5vh;
+    width: 1.5vh;
+    border-radius: 50%;
+    background-color: var(--color-2);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    transition-duration: .3s;
+    left: 100%;
+    z-index: 2;
+}
+.pg2>.fas{
+    position:absolute;
+    font-size: 4vh;
+    transition-duration: .5s;
+    top: 190%;
+    transform: translate(-50%,-50%);
+    /* animation: moves  .5s linear ease-in; */
+    color: var(--color-2);
+    opacity: 00%;
+}
+.pg2>.fa-chevron-left{
+    left: 35%;
+}
+.pg2>.fa-chevron-right{
+    left: 65%;
+}
+.imgHW>.fas{
+    position: absolute;
+    top: 00%;
+    font-size: 3.5vh;
+    z-index: 1000000000000;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+    color: transparent;
+    cursor: default;
+}
+.imgHW>.fas:hover{
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(4px);
+    color: var(--color-2);
+}
+#prevImg{
+    left: 0%;
+}
+#nextImg{
+    left: 70%;
+}
+
+.pg3{
+    scroll-snap-align: center;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    background: var(--color-3);
+    align-items: center;
+    justify-content: center;
+    color: var(--color-2);
+    background-image: url(/joakim-honkasalo-ssvjJLB6wIw.33c402c6.jpg);
+    background-size: 50% 90%;
+    background-color: #000;
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+}
+.pg3 a{
+    font-family: 'Abril Fatface', cursive;
+    font-size: 4vh;
+    transition-duration: .3s;
+}
+
+
+/*# sourceMappingURL=/work.03b75fa1.css.map */
